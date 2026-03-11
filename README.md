@@ -54,7 +54,25 @@ Depending on your setup, you may need environment variables for:
 
 - MySQL connection (host, port, user, password, database name)  
 - Backend server port  
-- WebSocket URL used by the frontend  
+- WebSocket URL used by the frontend
+
+## Database setup
+
+The project requires a database that the backend will connect to. The SQL file needed to create and seed this database is included in the project files.
+
+1. Locate the SQL file in the project (for example `schema.sql`, `database.sql`, or similar).
+2. Import or run this SQL file in your database server (e.g., MySQL or MariaDB) using your preferred tool:
+   - A GUI client (like MySQL Workbench, phpMyAdmin, etc.), or
+   - Command line:
+
+     ```bash
+     mysql -u YOUR_USER -p YOUR_DATABASE < path/to/file.sql
+     ```
+
+3. Ensure the backend’s database configuration matches the database name, user, and password you used when creating the database.
+4. Make sure the database is configured correctly for the server in the env file.
+
+> Note: The actual database connection is handled by the backend; the frontend just assumes the backend and database are configured and running.
 
 ## Running the backend server
 
@@ -87,6 +105,18 @@ Adjust this to match your actual folders:
 └─ README.md
 ```
 
+## Typical workflow
+
+1. Start the database server (with the schema loaded from the provided SQL file).
+2. Start the backend server (listening on ports 9001 and 9002 for WebSockets).
+3. Start the frontend:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open `http://localhost:3000` in your browser and interact with the app.
+
 ## Common issues
 
 - If `node server.js` fails, check:
@@ -95,4 +125,7 @@ Adjust this to match your actual folders:
 - If the frontend cannot reach the backend:
   - Verify the backend port and URL used in the Next.js code.
   - Confirm the backend terminal shows “listening on port …” (or similar log).
+- **Database-related issues**
+  - Ensure the SQL file was imported correctly into your database.
+  - Confirm that the backend configuration (database name, user, password, host) matches your database setup.
 ```
