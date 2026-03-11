@@ -128,4 +128,3 @@ Adjust this to match your actual folders:
 - **Database-related issues**
   - Ensure the SQL file was imported correctly into your database.
   - Confirm that the backend configuration (database name, user, password, host) matches your database setup.
-```
