@@ -1,4 +1,3 @@
-```markdown
 # Project Title
 
 A simple full‑stack application with a Node.js backend (Express, WebSocket, MySQL) and a Next.js frontend.
@@ -18,6 +17,7 @@ Before you start, make sure you have:
 
 You can verify the installation with:
 
+```markdown
 ```bash
 node -v
 npm -v
