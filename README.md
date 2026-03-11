@@ -18,7 +18,6 @@ Before you start, make sure you have:
 You can verify the installation with:
 
 ```markdown
-```bash
 node -v
 npm -v
 ```
